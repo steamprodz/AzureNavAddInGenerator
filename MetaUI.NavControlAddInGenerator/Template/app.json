@@ -1,0 +1,24 @@
+{
+  "id": "{{ControlId}}",
+  "name": "{{ControlAddInName}}",
+  "publisher": "Global Mediator",
+  "brief": "",
+  "description": "",
+  "version": "1.0.20180917.1",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+    "from": 40000,
+    "to": 90000
+    }
+  ]
+}

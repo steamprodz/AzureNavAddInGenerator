@@ -1,0 +1,90 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Template\images\**" />
+    <EmbeddedResource Remove="Template\images\**" />
+    <None Remove="Template\images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Template\app.json" />
+    <None Remove="Template\ControlAddIn {{ControlAddInName}}.al" />
+    <None Remove="Template\Page Extension {{PageExtensionId}}- {{PageExtensionName}}.al" />
+    <None Remove="Template\scripts\engine.js" />
+    <None Remove="Template\scripts\extension.js" />
+    <None Remove="Template\scripts\start.js" />
+    <None Remove="Template\Sources\Codeunits\COD70000.Meta UI OData Filters Routines.al" />
+    <None Remove="Template\stylesheets\assets\calendar %281%29.png" />
+    <None Remove="Template\stylesheets\assets\calendar.png" />
+    <None Remove="Template\stylesheets\assets\dot.png" />
+    <None Remove="Template\stylesheets\assets\leftArrow.png" />
+    <None Remove="Template\stylesheets\assets\rightArrow.png" />
+    <None Remove="Template\stylesheets\metaui-timeslider.css" />
+    <None Remove="Template\stylesheets\styles.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Template\app.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\scripts\engine.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\Sources\Codeunits\COD70000.Meta UI OData Filters Routines.al">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\Sources\Controls\ControlAddIn {{ControlAddInName}}.al">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\Sources\Page Extensions\Page Extension {{PageExtensionId}}- {{PageExtensionName}}.al">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\scripts\extension.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\scripts\start.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\stylesheets\assets\calendar (1).png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\stylesheets\assets\calendar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\stylesheets\assets\dot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\stylesheets\assets\leftArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\stylesheets\assets\rightArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\stylesheets\metaui-timeslider.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template\stylesheets\styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Template\.alpackages\" />
+    <Folder Include="Template\Sources\Pages\" />
+    <Folder Include="Template\Sources\Tables\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.14" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>

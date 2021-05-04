@@ -1,0 +1,143 @@
+.red { background-color: rgb(250,128,114) !important; }
+.green { background-color: rgb(152,251,152) !important; }
+td.arrow-red > div {
+  float: right !important;
+}
+
+td.arrow-red::before {
+  font-family: "Font Awesome 5 Free";
+  color: #f72a1e;
+  font-weight: 900;
+  font-size: 1.2em;
+  content: "\f061"
+}
+
+td.arrow-green > div {
+  float: right !important;
+}
+
+td.arrow-green::before {
+  font-family: "Font Awesome 5 Free";
+  color: #41AC7D;
+  font-weight: 900;
+  font-size: 1.2em;
+  content: "\f060"
+}
+
+td.exclamation-triangle-orange::before {
+  font-family: "Font Awesome 5 Free";
+  color: orange;
+  font-weight: 900;
+  font-size: 1.2em;
+  content: "\f071"
+}
+
+td.arrow-orange::before {
+  font-family: "Font Awesome 5 Free";
+  color: orange;
+  font-weight: 900;
+  font-size: 1.2em;
+  content: "\f337"
+}
+td.adr-red::before {
+  font-family: "Font Awesome 5 Free";
+  color: #f72a1e;
+  font-weight: 900;
+  font-size: 1.2em;
+  content: "\f7b9"
+}
+
+.time-slider-message-text {
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.red-font {
+  color: #f72a1e !important;
+}
+
+.green-font {
+  color: #41AC7D !important;
+}
+
+i.pi.pi-times:hover {
+  cursor: pointer !important;
+}
+
+body .ui-table .ui-table-tbody>tr>td.no-padding {
+  padding: 0 !important;
+}
+
+/* Temp styles */
+
+body .ui-table .ui-table-thead>tr>th {
+  vertical-align: top !important;
+}
+
+body .ui-table .ui-table-thead > tr > th span {
+  vertical-align: top !important;
+}
+
+body .pi {
+  font-family: 'primeicons'!important;
+}
+
+.ui-paginator .ui-paginator-icon {
+  font-family: 'primeicons'!important;
+  z-index: 1000!important;
+}
+
+body .ui-contextmenu .ui-menuitem-link {
+  padding: 12px 25px 8px 8px!important;
+}
+
+body .ui-contextmenu .ui-menuitem-link .ui-menuitem-text {
+  padding-left: 5px!important;
+}
+
+body .ui-contextmenu .ui-menuitem-link .ui-menuitem-icon {
+  z-index: 10000!important;
+  font-family: 'primeicons'!important;
+  position: static!important;
+  margin-right: 5px!important;
+  line-height: 20px;
+  height: 20px;
+}
+
+.ui-table p-sorticon {
+  vertical-align: top!important;
+}
+
+.ui-table table {
+  width: auto;
+}
+ 
+body .ui-paginator {
+  border: none!important;
+  background-color: #f1f1f1!important;
+  padding: 2px 0!important;
+  border-bottom: 1px solid #e6e6e6!important;
+}
+
+
+/* sorting header styles */
+/* 
+body .ui-table .ui-sortable-column.ui-state-highlight {
+  background-color: $highlight-row-background;
+  &:hover {
+    background-color: $highlight-row-background;
+  }
+} */
+
+body .ui-table .ui-table-thead > tr > .highlighted {
+  background-color: #b2e9ed!important;
+}
+
+body .ui-table .ui-table-thead > tr > .highlighted:hover {
+  background-color: #b2e9ed!important;
+}
+
+.graduation-title {
+  width: 80px;
+  font-size: 11px;
+}
