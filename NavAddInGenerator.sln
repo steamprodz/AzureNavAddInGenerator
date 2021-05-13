@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaUI.NavControlAddInGener
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaUI.NavControlAddInGenerator.Tests", "MetaUI.NavControlAddInGenerator.Tests\MetaUI.NavControlAddInGenerator.Tests.csproj", "{D1B4CE42-9041-4FFE-B212-5DBB2EFAEBD7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaUI.NavAddInGeneratorRunner", "MetaUI.NavAddInGeneratorRunner\MetaUI.NavAddInGeneratorRunner.csproj", "{4965D3E9-2452-4227-A399-EF86A2A887AC}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaUI.AzureNavAddInGenerator", "MetaUI.AzureNavAddInGenerator\MetaUI.AzureNavAddInGenerator.csproj", "{648C9BAD-7F76-4E16-B78E-442DF100FA8F}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{D1B4CE42-9041-4FFE-B212-5DBB2EFAEBD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1B4CE42-9041-4FFE-B212-5DBB2EFAEBD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1B4CE42-9041-4FFE-B212-5DBB2EFAEBD7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4965D3E9-2452-4227-A399-EF86A2A887AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4965D3E9-2452-4227-A399-EF86A2A887AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4965D3E9-2452-4227-A399-EF86A2A887AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4965D3E9-2452-4227-A399-EF86A2A887AC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{648C9BAD-7F76-4E16-B78E-442DF100FA8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{648C9BAD-7F76-4E16-B78E-442DF100FA8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{648C9BAD-7F76-4E16-B78E-442DF100FA8F}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -133,55 +133,55 @@ codeunit 70000 "Meta UI OData Filters Routines"
                             begin
                                 SkipEqualization := FilterParticle.URL1 in ['<', '<=', '>', '>=', '<>'];
 
-                                case FilterParticle.URL1 of
-                                    '<':
-                                        FilterParticle.URL2 := ODataName + ' lt ';
-                                    '>':
-                                        FilterParticle.URL2 := ODataName + ' gt ';
-                                    '<=':
-                                        FilterParticle.URL2 := ODataName + ' le ';
-                                    '>=':
-                                        FilterParticle.URL2 := ODataName + ' ge ';
-                                    '<>':
-                                        FilterParticle.URL2 := ODataName + ' ne ';
-                                    '&':
-                                        FilterParticle.URL2 := ' and ';
-                                    '|':
-                                        FilterParticle.URL2 := ' or ';
-                                    '..':
-                                        begin
-                                            FilterParticle2.Get(FilterParticle."Link ID");
-                                            if FilterParticle2.Next(-1) <> 0 then
-                                                if FilterParticle2.Type = FilterParticle2.Type::Note then begin
-                                                    FilterParticle2.URL2 :=
-                                                        ODataName + ' ge ' + ConvertToODataValue(SystemField, FilterParticle2.URL1);
-                                                    FilterParticle2.Modify();
+                                // case FilterParticle.URL1 of
+                                //     '<':
+                                //         FilterParticle.URL2 := ODataName + ' lt ';
+                                //     '>':
+                                //         FilterParticle.URL2 := ODataName + ' gt ';
+                                //     '<=':
+                                //         FilterParticle.URL2 := ODataName + ' le ';
+                                //     '>=':
+                                //         FilterParticle.URL2 := ODataName + ' ge ';
+                                //     '<>':
+                                //         FilterParticle.URL2 := ODataName + ' ne ';
+                                //     '&':
+                                //         FilterParticle.URL2 := ' and ';
+                                //     '|':
+                                //         FilterParticle.URL2 := ' or ';
+                                //     '..':
+                                //         begin
+                                //             FilterParticle2.Get(FilterParticle."Link ID");
+                                //             if FilterParticle2.Next(-1) <> 0 then
+                                //                 if FilterParticle2.Type = FilterParticle2.Type::Note then begin
+                                //                     FilterParticle2.URL2 :=
+                                //                         ODataName + ' ge ' + ConvertToODataValue(SystemField, FilterParticle2.URL1);
+                                //                     FilterParticle2.Modify();
 
-                                                    FilterParticle.URL2 += ' ';
-                                                end;
+                                //                     FilterParticle.URL2 += ' ';
+                                //                 end;
 
-                                            FilterParticle2.Get(FilterParticle."Link ID");
-                                            if FilterParticle2.Next(1) <> 0 then
-                                                if FilterParticle2.Type = FilterParticle2.Type::Note then begin
-                                                    FilterParticle2.URL2 :=
-                                                        ODataName + ' le ' + ConvertToODataValue(SystemField, FilterParticle2.URL1);
-                                                    FilterParticle2.Modify();
+                                //             FilterParticle2.Get(FilterParticle."Link ID");
+                                //             if FilterParticle2.Next(1) <> 0 then
+                                //                 if FilterParticle2.Type = FilterParticle2.Type::Note then begin
+                                //                     FilterParticle2.URL2 :=
+                                //                         ODataName + ' le ' + ConvertToODataValue(SystemField, FilterParticle2.URL1);
+                                //                     FilterParticle2.Modify();
 
-                                                    if FilterParticle.URL2 <> '' then
-                                                        FilterParticle.URL2 += 'and '
-                                                    else
-                                                        FilterParticle.URL2 := ' ';
-                                                end;
-                                        end;
-                                end;
+                                //                     if FilterParticle.URL2 <> '' then
+                                //                         FilterParticle.URL2 += 'and '
+                                //                     else
+                                //                         FilterParticle.URL2 := ' ';
+                                //                 end;
+                                //         end;
+                                // end;
                             end;
 
-                        FilterParticle.Type::Note: // Search Criteria
-                            if FilterParticle.URL2 = '' then begin
-                                FilterParticle.URL2 := ConvertToODataValue(SystemField, FilterParticle.URL1);
-                                if not SkipEqualization then
-                                    FilterParticle.URL2 := ODataName + ' eq ' + FilterParticle.URL2;
-                            end;
+                    //FilterParticle.Type::Note: // Search Criteria
+                    // if FilterParticle.URL2 = '' then begin
+                    //     FilterParticle.URL2 := ConvertToODataValue(SystemField, FilterParticle.URL1);
+                    //     if not SkipEqualization then
+                    //         FilterParticle.URL2 := ODataName + ' eq ' + FilterParticle.URL2;
+                    //end;
                     end;
 
                     FilterParticle.Modify();
@@ -189,9 +189,9 @@ codeunit 70000 "Meta UI OData Filters Routines"
 
             If FilterParticle.FindSet() then begin
                 Clear(ODataFilter);
-                repeat
-                    ODataFilter += FilterParticle.URL2;
-                until (FilterParticle.Next() = 0);
+                // repeat
+                //     ODataFilter += FilterParticle.URL2;
+                // until (FilterParticle.Next() = 0);
 
                 if ODataFilters <> '' then
                     ODataFilters += StrSubstNo(' and (%1)', ODataFilter)
@@ -275,7 +275,7 @@ codeunit 70000 "Meta UI OData Filters Routines"
             else
                 Particle.Type := Particle.Type::Note;
             Particle.URL1 := Value;
-            Particle.URL2 := '';
+            //Particle.URL2 := '';
             Particle.Insert();
         end;
     end;

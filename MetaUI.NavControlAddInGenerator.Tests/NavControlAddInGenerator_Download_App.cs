@@ -1,41 +1,47 @@
-﻿using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
+﻿using MetaUI.NavControlAddInGenerator.Interface;
+using Microsoft.Extensions.DependencyInjection;
+using Shouldly;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace MetaUI.NavControlAddInGenerator.Tests
 {
-    public class NavControlAddInGenerator_Download_App
+    public class NavControlAddInGenerator_Download_App : IClassFixture<StartupFixture>
     {
+        private readonly ServiceProvider serviceProvider;
+
+        public NavControlAddInGenerator_Download_App(StartupFixture fixture)
+        {
+            this.serviceProvider = fixture.ServiceProvider;
+        }
+
         [Fact]
         public async Task DownloadApp()
         {
-            var client = new HttpClient();
+            // Emulating Azure function directory in local storage
+            var functionDirectory = "";
+            string appFolder = "App";
 
-            var body = new Dictionary<string, string>
+            try
             {
-                { "InitEventName", "init"},
-                { "ControlHtmlContext", "<meta-ui-grid></meta-ui-grid>"},
-                { "ControlAddInName", "Customers"},
-                { "PluginDetailsUrl", "test settings"},
-                { "ExtensionPages", "[{\"PageExtensionId\": 50001, \"PageExtensionName\": \"Customer Grid\", \"PageToExtendName\": \"Customer List\"}]"},
-                { "Scripts", "[\"https://dev-meta-ui-grid.azureedge.net/latest/meta-ui-grid.js\"]"},
-                { "Styles", "[\"https://cdn.jsdelivr.net/npm/primeicons@1.0.0-beta.10/primeicons.min.css\", \"https://cdn.jsdelivr.net/npm/primeng@6/resources/primeng.min.css\", \"https://cdn.jsdelivr.net/npm/primeng@6.1.4/resources/themes/nova-light/theme.min.css\"]"},
-                { "ControlId", "e6189b6a-b364-4c01-a121-164cc15d36a5"}
-            };
+                if (Directory.Exists(appFolder))
+                {
+                    Directory.Delete(appFolder, true);
+                }
+            }
+            catch { }
+                
+            // Get service
+            var generator = serviceProvider.GetService<INavControlAddInGenerator>();
+            // Execute
+            appFolder = await generator.CreateAppFolderAsync(functionDirectory);
+            await generator.DownloadSymbolsAsync();
+            var appFileName = await generator.RunCompiler(functionDirectory);
+            // Read .app file
+            var result = await File.ReadAllBytesAsync(appFileName);
 
-            var requestUri = $@"https://generatenavextensionapp.azurewebsites.net/api/GenerateNavExtensionApp";
-
-            var content = new FormUrlEncodedContent(body);
-
-            var response = await client.PostAsync(requestUri, content);
-
-            var responseString = await response.Content.ReadAsStringAsync();
-
-            responseString.ShouldNotBeEmpty();
+            result.ShouldNotBeEmpty();
         }
     }
 }

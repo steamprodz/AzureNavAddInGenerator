@@ -2,23 +2,21 @@
   "id": "{{ControlId}}",
   "name": "{{ControlAddInName}}",
   "publisher": "Global Mediator",
-  "brief": "",
-  "description": "",
-  "version": "1.0.20180917.1",
-  "privacyStatement": "",
-  "EULA": "",
-  "help": "",
-  "url": "",
-  "logo": "",
-  "capabilities": [],
-  "dependencies": [],
+  "version": "{{Version}}",
+  "brief": "Meta UI Wizard",
+  "description": "Meta UI Wizard",
+  "privacyStatement": "https://MetaUIWizard.com/help/",
+  "EULA": "https://MetaUIWizard.com/help/",
+  "help": "https://MetaUIWizard.com/help/",
+  "url": "https://MetaUIWizard.com/help/",
+  "dependencies": {{DependenciesJson}},
   "screenshots": [],
-  "platform": "17.0.0.0",
-  "application": "17.0.0.0",
-  "idRanges": [
-    {
-    "from": 40000,
-    "to": 90000
-    }
-  ]
+  "platform": "{{PlatformVersion}}",
+  "application": "{{ApplicationVersion}}",
+  "idRanges": {{IdRangesJson}},
+  "contextSensitiveHelpUrl": "https://MetaUIWizard.com/help/",
+  "showMyCode": true,
+  "runtime": "{{RuntimeVersion}}",
+  "features": ["TranslationFile"],
+  "target": "Cloud"
 }

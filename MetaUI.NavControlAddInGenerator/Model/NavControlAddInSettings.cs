@@ -3,17 +3,32 @@ using System.Collections.Generic;
 
 namespace MetaUI.NavControlAddInGenerator.Model
 {
-	public class ExtensionPage
-    {
-		public string PageExtensionId { get; set; }
-
-		public string PageExtensionName { get; set; }
-
-		public string PageToExtendName { get; set; }
-	}
-
-	public class NavControlAddInSettings
+    public class NavControlAddInSettings
 	{
+		 public string DependenciesJson { get; set; }
+
+		public string PlatformVersion { get; set; }
+
+		public string ApplicationVersion { get; set; }
+
+		public string IdRangesJson { get; set; }
+
+		public string RuntimeVersion { get; set; }
+
+		public List<SymbolsConfiguration> SymbolsToDownload { get; set; }
+
+		public string EnvironmentName { get; set; }
+
+		public string EnvironmentTenantId { get; set; }
+
+		public string ClientId { get; set; }
+
+		public string ClientSecret { get; set; }
+
+		public string ExtensionPublisher { get; set; }
+
+		public string ExtensionVersion { get; set; }
+
 		public string InitEventName { get; set; }
 
 		public string ControlHtmlContext { get; set; }
